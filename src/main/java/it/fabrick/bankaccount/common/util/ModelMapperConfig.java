@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.modelmapper.spi.MappingContext;
 /**
- * //I create this configuration class for mapping from Entities to Dto class but if not used, must be deleted
+ * 
  * 
  * @author Gueye Nouroudine
  *

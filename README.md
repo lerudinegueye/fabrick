@@ -1,9 +1,9 @@
 # fabrick application
 
-1-******** External Properties of this application are loaded from a local file that must be created with this path below:*****
-C:\fabrickProperties\fabrick.properties
+1-******** External rest Properties of this application are loaded from  file fabrick.properties:*****
 
-2 -*****Into the file fabrick.properties, we must add this variables below:*****
+
+2 -*****Into the file fabrick.properties, we must have these variables below:*****
 fabrick.accountId=14537780
 fabrick.baseUrl=https://sandbox.platfr.io
 fabrick.contextUrl=/api/gbs/banking/v4.0/accounts/{accountId}
@@ -40,10 +40,13 @@ fabrick.urlTransaction=https://sandbox.platfr.io/api/gbs/banking/v4.0/accounts/{
 ****Database H2 in Memory or File in local system****
 For H2 web console:http://localhost:8080/h2-console
 
-For persisting database in local file: create this folder that you will pass to h2 console web as last part of url connection:
+**** 1- in memory we needn't create anything.
+For persisting database in local file: create this folder or your own folder that you will pass to h2 console web as last part of url connection example for me:
 C:/fabrickdb/fabrick
 refer to application.properties file:<--> spring.datasource.url=jdbc:h2:file:C:/fabrickdb/fabrick
 So you must create this directory C:/fabrickdb/fabrick
+
+
 user:sa
 password:testFabrick
   

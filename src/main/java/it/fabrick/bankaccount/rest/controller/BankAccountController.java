@@ -39,11 +39,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import it.fabrick.bankaccount.RestProperties;
+import it.fabrick.bankaccount.common.exception.EmptyInputException;
 import it.fabrick.bankaccount.common.util.ProjectErrorMessage;
 import it.fabrick.bankaccount.common.util.ProjectException;
 import it.fabrick.bankaccount.common.util.ProjectUtil;
 import it.fabrick.bankaccount.common.util.StandardErrorMessage;
-import it.fabrick.bankaccount.constants.Constants;
 import it.fabrick.bankaccount.db.entities.Transaction;
 import it.fabrick.bankaccount.db.service.TransactionService;
 import it.fabrick.bankaccount.dto.BankAccountDto;
@@ -139,9 +139,10 @@ public class BankAccountController {
 		try {
 			restTemplate.exchange(ProjectUtil.fillPathVariable(restProperties.getFabrick().getUrlMoneyTransfer(), restProperties.getFabrick().getAccountId()),HttpMethod.POST, entity, String.class);
 		} catch (Exception e) {
-			esito = new Esito(Constants.API000, Constants.ERROR_TECNICO_MONEY_TRANSFER);
-			return new ResponseEntity<Esito>(objectMapper.readValue(Constants.ERROR_MESSAGGE, Esito.class),ProjectUtil.getResponseHeaders(entity.getHeaders()), HttpStatus.INTERNAL_SERVER_ERROR);
+			throw new EmptyInputException(String.valueOf(StandardErrorMessage.ERROR_TECNICO_MONEY_TRANSFER.httpCode),StandardErrorMessage.ERROR_TECNICO_MONEY_TRANSFER.code ,StandardErrorMessage.ERROR_TECNICO_MONEY_TRANSFER.message);
 		}
+		
+		
 		return new ResponseEntity<Esito>(esito, HttpStatus.OK);//Must return the real response but we must only to return an object Esito
 	}
 

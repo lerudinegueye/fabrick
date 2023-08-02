@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties
-@PropertySource("file:C:\\fabrickProperties\\fabrick.properties")
+@PropertySource("classpath:fabrick.properties")
 public class RestProperties {
 	@Autowired
 	Environment env;

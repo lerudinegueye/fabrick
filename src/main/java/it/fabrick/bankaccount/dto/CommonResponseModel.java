@@ -11,8 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CommonResponseModel {
 	@JsonProperty("code")
-	private String code = null;
-	@JsonProperty("message")
-	private String message = null;
+	private String code;
+	@JsonProperty("errorCode")
+	private String errorCode;
+	@JsonProperty("errorMessage")
+	private String errorMessage;
 
 }
