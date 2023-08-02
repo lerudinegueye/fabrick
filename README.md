@@ -1,6 +1,6 @@
 # fabrick application
 
-1-******** External Properties of this application are loaded from a local file tha must be created with this path below:*****
+1-******** External Properties of this application are loaded from a local file that must be created with this path below:*****
 C:\fabrickProperties\fabrick.properties
 
 2 -*****Into the file fabrick.properties, we must add this variables below:*****
@@ -18,7 +18,7 @@ fabrick.urlTransaction=https://sandbox.platfr.io/api/gbs/banking/v4.0/accounts/{
 
   3.2 - To see graphically existing endpoints, launch to your browser:http://localhost:8080/swagger-ui/index.html
 
-4-*****Endpoint in localhost for this application***********
+4-*****Endpoint at localhost for this application***********
 
    *********Common Headers key value pairs for all calls endpoints:********
    Auth-Schema:S2S

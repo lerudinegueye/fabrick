@@ -128,9 +128,9 @@ public class BankAccountController {
 	@RequestMapping(value = "/payments/money-transfers", produces = { "application/json" }, consumes = {
 			"application/json" }, method = RequestMethod.POST)
 	public ResponseEntity<Esito>  doMoneyTransfer(
-			@RequestHeader(name = "X-Time-Zone", defaultValue = Constants.HEADERS.X_TIME_ZONE, required = true) String xTimeZone,
-			@RequestHeader(name = "Auth-Schema", defaultValue = Constants.HEADERS.AUTH_SCHEMA, required = true) String authSchema,
-			@RequestHeader(name = "Api-Key", defaultValue = Constants.HEADERS.API_KEY, required = true) String apiKey,
+			@RequestHeader(name = "X-Time-Zone", required = true) String xTimeZone,
+			@RequestHeader(name = "Auth-Schema", required = true) String authSchema,
+			@RequestHeader(name = "Api-Key", required = true) String apiKey,
 			@PathVariable("accountId") Long accountId, @RequestBody @Valid MoneyTransFerRequestDto moneyTransFerRequest) throws JsonMappingException, JsonProcessingException {
 		
 		HttpEntity<Object> entity = ProjectUtil.fillHeaders();
